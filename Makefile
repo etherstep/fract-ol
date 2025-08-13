@@ -71,13 +71,13 @@ is_up_to_date = \
 
 # Default target / checks if rebuild is needed
 all:
-    @if $(is_up_to_date); then \
-        echo "$(BOLD)$(YELLOW)🔄 $(NAME) is already up to date.$(RESET)"; \
-    else \
-        echo "$(BOLD)$(WHITE)🌀 Starting to build $(NAME)...$(RESET)"; \
-        $(MAKE) $(NAME) --no-print-directory; \
-        echo "$(BOLD)$(GREEN)✅ All components built successfully!$(RESET)"; \
-    fi
+	@if $(is_up_to_date); then \
+		echo "$(BOLD)$(YELLOW)🔄 $(NAME) is already up to date.$(RESET)"; \
+	else \
+		echo "$(BOLD)$(WHITE)🌀 Starting to build $(NAME)...$(RESET)"; \
+		$(MAKE) $(NAME) --no-print-directory; \
+		echo "$(BOLD)$(GREEN)✅ All components built successfully!$(RESET)"; \
+	fi
 
 # Main executable target - links all objects and libraries
 $(NAME): $(OBJS) $(LIBFT) $(MLX)
